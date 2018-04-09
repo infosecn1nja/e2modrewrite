@@ -1,0 +1,3 @@
+"/c/msdownload/update/others/2016/12/29136388_,/c/msdownload/update/others/2016/12/3215234_|Windows-Update-Agent/10.0.10011.16384 Client-Protocol/1.40|Host:download.windowsupdate.com|Accept: */*"
+
+"Content-Type:application/vnd.ms-cab-compressed|Server:Microsoft-IIS/8.5|MSRegion:N. America|Connection:keep-alive|X-Powered-By:ASP.NET"
