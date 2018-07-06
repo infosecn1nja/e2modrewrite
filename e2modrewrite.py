@@ -62,10 +62,16 @@ RewriteRule ^.*$ {}/? [L,R=302]
 ########################################
 '''
 
+ua_string = "set DefaultProfile"
 commProfile = open(args.inputfile, 'r')
-cp_file = commProfile.read()
+contents = commProfile.read()
+
+ua_start = contents.find(ua_string) + len(ua_string)
+ua_end   = contents.find("\n",ua_start)
+ua_profile = contents[ua_start:ua_end]
+
 commProfile.close()
-profile = re.sub(r'(?m)^\#.*\n?', '', cp_file).strip('\n')
+profile = re.sub(r'(?m)^\#.*\n?', '', ua_profile.lstrip()).strip('\n')
 
 uri_string = profile.split('|')[0]
 uri = uri_string.replace('\"','').replace(',','|').replace(',','|').strip('/')

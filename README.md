@@ -13,7 +13,7 @@ __Updates and Features__
 
 ## Example
 ```
-$ python e2modrewrite.py -i profile/comfoo.txt -c 192.168.1.1 -d https://google.com 
+$ python e2modrewrite.py -i profiles/normal/microsoftupdate.profile -c 192.168.1.11 -d https://google.com
 
 #### Save the following as .htaccess in the root web directory
 ########################################
@@ -26,14 +26,14 @@ RewriteEngine On
 ## Uncomment and adjust as needed
 #RewriteCond %{REQUEST_URI} ^/css/style1.css?$
 #RewriteCond %{HTTP_USER_AGENT} ^$
-#RewriteRule ^.*$ "http://192.168.1.1/download/po" [P,L]
+#RewriteRule ^.*$ "http://192.168.1.11/download/po" [P,L]
 
 ## Profile URIs
-RewriteCond %{REQUEST_URI} ^/(include/template/isx.php|wp06/wp-includes/po.php|wp08/wp-includes/dtcla.php|modules/mod_search.php|blog/wp-includes/pomo/src.php|includes/phpmailer/class.pop3.php)/?$
+RewriteCond %{REQUEST_URI} ^/(c/msdownload/update/others/2013/11/9946821_f5082b842c8abc5c47cfc68f98340ec384b69fa9.cab|c/msdownload/update/software/ftpk/2013/11/ie-spelling-nl_3576e6450352dfc0c0892bf62384e75a56d780a7.msu)/?$
 
 ## Profile UserAgent
-RewriteCond %{HTTP_USER_AGENT} ^Mozilla/5\.0\ \(Windows;\ U;\ MSIE\ 7\.0;\ Windows\ NT\ 5\.2\)\ Java/1\.5\.0_08?$
-RewriteRule ^.*$ http://192.168.1.1%{REQUEST_URI} [P]
+RewriteCond %{HTTP_USER_AGENT} ^Windows-Update-Agent/10\.0\.10011\.16384\ Client-Protocol/1\.40?$
+RewriteRule ^.*$ http://192.168.1.11%{REQUEST_URI} [P]
 
 # Redirect all other traffic here
 RewriteRule ^.*$ https://google.com/? [L,R=302]
